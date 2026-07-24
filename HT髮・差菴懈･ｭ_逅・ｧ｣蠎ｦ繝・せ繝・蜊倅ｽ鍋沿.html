@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b5cab" />
+  <title>多回引き集荷 作業手順理解度テスト</title>
+  <style>
+:root{--blue:#0b5cab;--blue2:#08467f;--light:#eaf4ff;--green:#18864b;--red:#c93535;--ink:#17202b;--muted:#687485;--line:#dbe3ec;--bg:#f4f7fa;--white:#fff;--shadow:0 12px 28px rgba(22,45,75,.10)}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Yu Gothic UI","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}.topbar{background:linear-gradient(135deg,var(--blue2),var(--blue));color:#fff;padding:22px max(18px,calc((100vw - 760px)/2));display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 18px rgba(0,45,95,.22)}h1{font-size:clamp(22px,4vw,32px);line-height:1.25;margin:2px 0}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:0;opacity:.78}.subtitle{margin:4px 0 0;opacity:.85;font-size:14px}.container{width:min(100%,760px);margin:0 auto;padding:24px 16px 46px}.screen{display:none}.screen.active{display:block}.hero-card,.form-card,.question-card,.result-card,.history-list,.review-item{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.hero-card{padding:26px;text-align:center;margin-bottom:18px}.hero-card h2{margin:10px 0 8px}.hero-card p{color:var(--muted);line-height:1.7}.hero-icon{width:68px;height:68px;border-radius:50%;background:var(--light);color:var(--blue);display:grid;place-items:center;margin:auto;font-size:38px;font-weight:800}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}.info-grid div{background:#f7f9fc;border-radius:14px;padding:12px 6px}.info-grid strong{display:block;color:var(--blue);font-size:23px}.info-grid span{font-size:11px;color:var(--muted)}.form-card{padding:22px}.form-card label:not(.check-row){display:block;font-weight:700;margin-bottom:16px}.form-card input[type=text]{width:100%;margin-top:7px;border:1.5px solid #cbd6e2;border-radius:12px;padding:14px;font-size:16px;outline:none}.form-card input[type=text]:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,92,171,.12)}.check-row{display:flex;gap:10px;align-items:center;margin:6px 0 18px;color:var(--muted)}button{font:inherit;cursor:pointer}.primary-btn,.secondary-btn{width:100%;border-radius:13px;padding:15px 16px;font-weight:800;font-size:16px}.primary-btn{border:0;background:var(--blue);color:#fff;box-shadow:0 7px 15px rgba(11,92,171,.22)}.primary-btn:hover{background:var(--blue2)}.secondary-btn{background:#fff;color:var(--blue);border:1.5px solid var(--blue);margin-top:11px}.text-btn,.danger-text{width:100%;border:0;background:transparent;padding:13px;color:var(--muted)}.danger-text{color:var(--red)}.icon-btn{border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.12);width:42px;height:42px;border-radius:12px;font-size:24px}.progress-wrap{margin-bottom:16px}.progress-meta{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:8px}.progress-track{height:10px;background:#dce5ef;border-radius:99px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#0b5cab,#2c95e8);transition:width .3s}.question-card{padding:24px}.step-badge{display:inline-block;background:var(--light);color:var(--blue);font-weight:800;border-radius:99px;padding:7px 12px}.question-no{color:var(--muted);font-size:13px;font-weight:700;margin:20px 0 6px}.question-card h2{font-size:clamp(21px,4vw,28px);line-height:1.5;margin:0}.context{color:var(--muted);line-height:1.65;margin-bottom:20px}.choices{display:grid;gap:11px}.choice{width:100%;text-align:left;border:1.5px solid #ced8e3;background:#fff;border-radius:14px;padding:16px;display:flex;gap:12px;align-items:center;font-weight:700;transition:.15s}.choice:hover{border-color:var(--blue);background:#f7fbff}.choice-letter{flex:0 0 30px;height:30px;border-radius:50%;background:#eef3f8;display:grid;place-items:center;color:var(--blue)}.choice.correct{border-color:var(--green);background:#edf9f2}.choice.wrong{border-color:var(--red);background:#fff0f0}.choice:disabled{cursor:default;color:var(--ink)}.feedback{margin:18px 0 13px;border-radius:12px;padding:14px;font-weight:700;line-height:1.5}.feedback.ok{background:#eaf8f0;color:#126c3c}.feedback.ng{background:#fff0f0;color:#a52929}.result-card{text-align:center;padding:28px}.result-mark{display:inline-block;font-weight:900;border-radius:99px;padding:8px 18px;margin:15px}.result-mark.pass{background:#eaf8f0;color:var(--green)}.result-mark.fail{background:#fff0f0;color:var(--red)}.score-circle{width:150px;height:150px;border-radius:50%;border:12px solid var(--light);display:flex;align-items:baseline;justify-content:center;padding-top:42px;margin:0 auto 16px;color:var(--blue)}.score-circle strong{font-size:48px}.score-circle span{font-weight:800}.result-card p{color:var(--muted);line-height:1.6}.review-list{display:grid;gap:12px;margin:18px 0}.review-item{padding:17px}.review-item h3{font-size:15px;margin:0 0 8px}.review-item p{margin:4px 0;color:var(--muted);font-size:14px}.review-item .answer{color:var(--green);font-weight:800}.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.section-heading h2{margin:4px 0}.small-btn{border:1px solid var(--blue);background:#fff;color:var(--blue);border-radius:10px;padding:9px 12px;font-weight:800}.history-list{overflow:hidden}.history-row{padding:15px 18px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:5px}.history-row:last-child{border-bottom:0}.history-row strong{font-size:16px}.history-row span{color:var(--muted);font-size:13px}.history-score{grid-row:1/3;grid-column:2;align-self:center;font-size:22px;font-weight:900;color:var(--blue)}.empty{padding:30px;text-align:center;color:var(--muted)}footer{text-align:center;padding:0 16px 28px;color:#8a95a3;font-size:12px}.hidden{display:none!important}.mobile-only{display:none}@media(max-width:520px){.mobile-only{display:block}.topbar{padding:18px}.container{padding-top:18px}.question-card{padding:20px}.info-grid strong{font-size:20px}}
+
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">物流教育アプリ</p>
+      <h1>多回引き集荷<br class="mobile-only">作業手順理解度テスト</h1>
+      <p class="subtitle">HT照合・荷山形成なし</p>
+    </div>
+    <button id="homeBtn" class="icon-btn hidden" aria-label="トップへ戻る">⌂</button>
+  </header>
+
+  <main id="app" class="container">
+    <section id="startScreen" class="screen active">
+      <div class="hero-card">
+        <div class="hero-icon">✓</div>
+        <h2>作業手順を確認しよう</h2>
+        <p>全19問の四択テストです。問題順・選択肢は毎回ランダムに変わります。</p>
+        <div class="info-grid">
+          <div><strong>19</strong><span>問題</span></div>
+          <div><strong>80%</strong><span>合格基準</span></div>
+          <div><strong>∞</strong><span>再挑戦可能</span></div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <label>社員番号
+          <input id="employeeId" type="text" inputmode="numeric" autocomplete="off" placeholder="例：123456" />
+        </label>
+        <label>名前
+          <input id="employeeName" type="text" autocomplete="name" placeholder="例：豊田 太郎" />
+        </label>
+        <label class="check-row">
+          <input id="shuffleToggle" type="checkbox" checked />
+          <span>問題をランダムにする</span>
+        </label>
+        <button id="startBtn" class="primary-btn">テストを開始</button>
+        <button id="historyBtn" class="secondary-btn">受験履歴を見る</button>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="progressText">1 / 19</span>
+          <span id="scoreLive">正解 0</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      </div>
+
+      <article class="question-card">
+        <div class="step-badge" id="stepBadge">手順①</div>
+        <p class="question-no" id="questionNo">第1問</p>
+        <h2 id="questionText"></h2>
+        <p class="context" id="questionContext"></p>
+        <div id="choices" class="choices"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <button id="nextBtn" class="primary-btn hidden">次の問題へ</button>
+      </article>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div id="resultCard" class="result-card">
+        <p class="eyebrow">テスト結果</p>
+        <div id="resultMark" class="result-mark">合格</div>
+        <div class="score-circle"><strong id="resultScore">0</strong><span>点</span></div>
+        <h2 id="resultMessage"></h2>
+        <p id="resultDetail"></p>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+      <button id="retryWrongBtn" class="primary-btn hidden">間違えた問題だけ復習</button>
+      <button id="retryBtn" class="secondary-btn">もう一度テスト</button>
+      <button id="backTopBtn" class="text-btn">トップへ戻る</button>
+    </section>
+
+    <section id="historyScreen" class="screen">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">端末内保存</p>
+          <h2>受験履歴</h2>
+        </div>
+        <button id="exportBtn" class="small-btn">CSV出力</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+      <button id="clearHistoryBtn" class="danger-text">履歴を全て削除</button>
+      <button id="historyBackBtn" class="secondary-btn">戻る</button>
+    </section>
+  </main>
+
+  <footer>データはこの端末内にのみ保存されます。</footer>
+  <script>
+const QUESTIONS = [
+ {step:'①',q:'進度管理板から何を取り、どこに付けますか？',context:'（　　　　）に付け、生産管理板に開始時間を記入する。',a:'進度管理板から回数札を取り、おかもち',opts:['進度管理板から回数札を取り、おかもち','平準化ポストから納入かんばんを取り、荷台','ストアから工程かんばんを取り、腰ポケット','空箱置場から回数札を取り、製品']},
+ {step:'②',q:'平準化ポストから1間口分の何を抜き取りますか？',context:'抜き取ったものは、おかもちポストへ投入します。',a:'納入かんばん',opts:['納入かんばん','工程かんばん','回数札','確認票']},
+ {step:'③',q:'納入かんばんの「箱種コード」を確認する場所はどこですか？',context:'確認後、空箱に納入かんばんを差し、運搬具に積みます。',a:'空箱置場',opts:['空箱置場','平準化ポスト','製品ストア','照合台']},
+ {step:'⑦',q:'共通レーンから流れてきた製品を、どこに投入しますか？',context:'永久略番を確認して投入します。',a:'ストア',opts:['ストア','空箱置場','おかもちポスト','ラインシュート']},
+ {step:'⑧',q:'最初に、どこからかんばんを抜きますか？',context:'（　　　　）から納入かんばんを1枚抜き、ラインNo.とストアNo.を確認する。',a:'腰ポケット',opts:['腰ポケット','製品の上','おかもち','確認票ホルダー']},
+ {step:'⑧',q:'腰ポケットから何を1枚抜きますか？',context:'ラインNo.とストアNo.を確認します。',a:'納入かんばん',opts:['納入かんばん','工程かんばん','確認票','回数札']},
+ {step:'⑨',q:'どこから製品を取り出し、荷台に置きますか？',context:'指定場所から正しい製品を集荷します。',a:'ストア',opts:['ストア','空箱置場','共通レーン','ラインシュート']},
+ {step:'⑩',q:'製品に付いている何を抜き取りますか？',context:'かんばんの落下がないかも確認します。',a:'工程かんばん',opts:['工程かんばん','納入かんばん','回数札','確認票']},
+ {step:'⑪',q:'工程かんばんの裏にある何とポイント部位を近づけますか？',context:'10cm以内に近づけて照合します。',a:'確認票',opts:['確認票','納入かんばん','回数札','箱種ラベル']},
+ {step:'⑪',q:'照合する順番の最初はどちらですか？',context:'（　　　　）⇒（　　　　）の順でポイントを確認します。',a:'確認票',opts:['確認票','製品','工程かんばん','納入かんばん']},
+ {step:'⑪',q:'確認票の次に確認するものは何ですか？',context:'確認票 ⇒（　　　　）の順で確認します。',a:'製品',opts:['製品','ストアNo.','空箱','ラインNo.']},
+ {step:'⑪',q:'ポイントの突合せに使う確認動作の1つは？',context:'ポイントを（　　　　）・声出しで突合せます。',a:'指差し',opts:['指差し','黙読','目視のみ','写真撮影']},
+ {step:'⑪',q:'指差しと組み合わせる確認動作は？',context:'ポイントを指差し・（　　　　）で突合せます。',a:'声出し',opts:['声出し','うなずき','記録','復唱なし']},
+ {step:'⑪',q:'ポイント1箇所あたり何秒で見比べますか？',context:'確認票写真と製品の向きを合わせ、体の正面で確認します。',a:'2秒',opts:['2秒','1秒','5秒','10秒']},
+ {step:'⑪',q:'手順書の突合せ基準は何秒／箇所ですか？',context:'速さよりも、確実な一致確認を優先します。',a:'2秒',opts:['2秒','0.5秒','4秒','8秒']},
+ {step:'⑫',q:'納入かんばんはどちらにして重ねますか？',context:'納入かんばんを（　）・工程かんばんを（　）にして重ねる。',a:'下',opts:['下','上','右','別々']},
+ {step:'⑫',q:'工程かんばんはどちらにして重ねますか？',context:'納入かんばんを下・工程かんばんを（　）にして重ねます。',a:'上',opts:['上','下','右','裏返し']},
+ {step:'⑫',q:'かんばんのQRコードが隠れないよう、どちらの手で左端を持ちますか？',context:'スキャナーエラーを防ぐための持ち方です。',a:'左手',opts:['左手','右手','両手で中央','どちらでもよい']},
+ {step:'⑬',q:'納入かんばんと工程かんばんの何を確認しますか？',context:'同じ項目を指差して確認します。',a:'略番',opts:['略番','発行日','箱数だけ','担当者名']}
+];
+
+const $=id=>document.getElementById(id);
+let quiz=[], index=0, correct=0, answers=[], locked=false, retryMode=false;
+const screens=['startScreen','quizScreen','resultScreen','historyScreen'];
+function show(id){screens.forEach(s=>$(s).classList.toggle('active',s===id));$('homeBtn').classList.toggle('hidden',id==='startScreen');window.scrollTo({top:0,behavior:'smooth'});}
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
+function clean(v){return (v||'').trim()}
+
+$('startBtn').addEventListener('click',()=>{
+ const name=clean($('employeeName').value), emp=clean($('employeeId').value);
+ if(!name){alert('名前を入力してください。');$('employeeName').focus();return;}
+ startQuiz(QUESTIONS,$('shuffleToggle').checked);
+});
+function startQuiz(source,doShuffle=true){quiz=doShuffle?shuffle(source):[...source];index=0;correct=0;answers=[];locked=false;retryMode=source.length!==QUESTIONS.length;show('quizScreen');renderQuestion();}
+function renderQuestion(){locked=false;const item=quiz[index];$('progressText').textContent=`${index+1} / ${quiz.length}`;$('scoreLive').textContent=`正解 ${correct}`;$('progressBar').style.width=`${(index/quiz.length)*100}%`;$('stepBadge').textContent=`手順${item.step}`;$('questionNo').textContent=`第${index+1}問`;$('questionText').textContent=item.q;$('questionContext').textContent=item.context;$('feedback').className='feedback hidden';$('nextBtn').classList.add('hidden');const choices=$('choices');choices.innerHTML='';shuffle(item.opts).forEach((opt,i)=>{const b=document.createElement('button');b.className='choice';b.innerHTML=`<span class="choice-letter">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;b.addEventListener('click',()=>answer(opt,b));choices.appendChild(b)});}
+function answer(selected,button){if(locked)return;locked=true;const item=quiz[index],ok=selected===item.a;if(ok)correct++;answers.push({item,selected,ok});document.querySelectorAll('.choice').forEach(b=>{b.disabled=true;const txt=b.querySelector('span:last-child').textContent;if(txt===item.a)b.classList.add('correct');else if(b===button)b.classList.add('wrong')});const fb=$('feedback');fb.className=`feedback ${ok?'ok':'ng'}`;fb.textContent=ok?'正解！':`不正解。正解は「${item.a}」です。`;$('scoreLive').textContent=`正解 ${correct}`;$('nextBtn').textContent=index===quiz.length-1?'結果を見る':'次の問題へ';$('nextBtn').classList.remove('hidden');}
+$('nextBtn').addEventListener('click',()=>{index++;if(index<quiz.length)renderQuestion();else finishQuiz();});
+function finishQuiz(){const pct=Math.round(correct/quiz.length*100),pass=pct>=80;show('resultScreen');$('progressBar').style.width='100%';$('resultScore').textContent=pct;$('resultMark').textContent=pass?'合格':'再確認';$('resultMark').className=`result-mark ${pass?'pass':'fail'}`;$('resultMessage').textContent=pass?'おめでとうございます！':'間違えた手順を復習しましょう';$('resultDetail').textContent=`${quiz.length}問中 ${correct}問正解（合格基準80点）`;const wrong=answers.filter(x=>!x.ok);$('reviewList').innerHTML=wrong.length?'<h2>間違えた問題</h2>'+wrong.map((x,i)=>`<div class="review-item"><h3>${i+1}. 手順${x.item.step} ${x.item.q}</h3><p>あなたの回答：${x.selected}</p><p class="answer">正解：${x.item.a}</p></div>`).join(''):'<div class="review-item"><h3>全問正解です！</h3><p>作業手順を正しく理解できています。</p></div>';$('retryWrongBtn').classList.toggle('hidden',wrong.length===0);$('retryWrongBtn').onclick=()=>startQuiz(wrong.map(x=>x.item),true);saveHistory(pct,correct,quiz.length,pass);}
+function saveHistory(score,c,total,pass){const list=JSON.parse(localStorage.getItem('htTestHistory')||'[]');list.unshift({date:new Date().toLocaleString('ja-JP'),employeeId:clean($('employeeId').value),name:clean($('employeeName').value),score,correct:c,total,pass,retry:retryMode});localStorage.setItem('htTestHistory',JSON.stringify(list.slice(0,100)));}
+$('retryBtn').onclick=()=>startQuiz(QUESTIONS,$('shuffleToggle').checked);$('backTopBtn').onclick=()=>show('startScreen');$('homeBtn').onclick=()=>{if(confirm('テストを終了してトップへ戻りますか？'))show('startScreen')};$('historyBtn').onclick=()=>{renderHistory();show('historyScreen')};$('historyBackBtn').onclick=()=>show('startScreen');
+function renderHistory(){const list=JSON.parse(localStorage.getItem('htTestHistory')||'[]');$('historyList').innerHTML=list.length?list.map(x=>`<div class="history-row"><strong>${escapeHtml(x.name)} ${x.pass?'✓':''}</strong><span>${escapeHtml(x.date)}・${x.correct}/${x.total}問${x.retry?'（復習）':''}</span><div class="history-score">${x.score}点</div></div>`).join(''):'<div class="empty">受験履歴はありません。</div>';}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+$('clearHistoryBtn').onclick=()=>{if(confirm('受験履歴を全て削除しますか？')){localStorage.removeItem('htTestHistory');renderHistory()}};
+$('exportBtn').onclick=()=>{const list=JSON.parse(localStorage.getItem('htTestHistory')||'[]');if(!list.length){alert('出力する履歴がありません。');return;}const rows=[['受験日時','社員番号','名前','点数','正解数','問題数','判定','区分'],...list.map(x=>[x.date,x.employeeId,x.name,x.score,x.correct,x.total,x.pass?'合格':'再確認',x.retry?'復習':'本テスト'])];const csv='\ufeff'+rows.map(r=>r.map(v=>`"${String(v??'').replace(/"/g,'""')}"`).join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download=`HT理解度テスト履歴_${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(a.href)};
+
+</script>
+</body>
+</html>
